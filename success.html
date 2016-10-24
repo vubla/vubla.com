@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<?php
+include('/var/vubla/hg/config.php');
+include('/var/vubla/hg/classes/autoload.php');
+Autoload::init();
+?>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Success - Vubla</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Boost your conversion rate - With intelligent and super fast site search for e-commerce.">
+
+    <!-- Le styles -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    
+    <!-- fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="assets/ico/favicon.png">
+    </head>
+
+    <body>
+        <script type="text/javascript">
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-20782753-1']);
+          _gaq.push(['_setDomainName', 'vubla.com']);
+          _gaq.push(['_trackPageview']);
+         
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+        </script>
+        <!-- Google Code for Oprettelse af bruger Conversion Page -->
+        <script type="text/javascript">
+        /* <![CDATA[ */
+        var google_conversion_id = 1006869427;
+        var google_conversion_language = "en";
+        var google_conversion_format = "3";
+        var google_conversion_color = "ffffff";
+        var google_conversion_label = "Nyp_CK3VmwUQs7eO4AM";
+        var google_conversion_value = 0;
+        /* ]]> */
+        </script>
+        <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+        </script>
+        <noscript>
+            <div style="display:inline;">
+                <img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/1006869427/?value=0&amp;label=Nyp_CK3VmwUQs7eO4AM&amp;guid=ON&amp;script=0"/>
+            </div>
+        </noscript>
+  
+    <div class="container head-nav">
+        <div class="row">
+            <div class="span2 head-nav">
+                <a href="index"><img src="assets/img/logos/logo-vubla.png"/></a>
+            </div>
+            <div class="span4 offset6 head-nav">            
+                <a target=_blank href="https://login.vubla.com/user/signup?iso=en"><div class="btn small black"><span class="italic light">SIGN UP</span></div></a>
+                <a href="https://login.vubla.com/?iso=en"><div class="btn small" style="margin-left:10px;"><span class="italic light">LOGIN</span></div></a>
+                <ul class="menu">
+                    <li style="border:none; margin-left:0; padding-left:0;"><a href="pricing">Prices</a></li>
+                    <li><a href="partners">Partners<img src="assets/img/partners-heart-small.png" style="padding-bottom:3px; padding-left:2px;"></a></li>
+<!--                    <li><a href="api">API</a></li> -->
+                    <li><a href="about">About</a></li>
+                    <li class="active"><a href="contact">Contact</a></li>
+                </ul>               
+            </div>
+        </div>
+    </div><!-- /container -->
+
+    <div class="black-bg head-banner">
+        <div class="container">
+            <div class="row">
+                <div class="span3">
+                    <p style="padding-top:16px;"><span class="light">Used & <span class="red">loved</span> by our customers.</span></p>
+                </div>
+                <div class="span3 offset6">
+                    <p><span class="light" style="padding-right:10px;">Powerful</span> recommendation engine.</p>
+                </div>
+            </div>
+        </div><!-- /container -->
+    </div>
+     
+            
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <h1><span class="light">Success</span>!</h1>
+            </div>
+        </div>
+    </div><!-- /container -->
+    
+    <div class="grey-bg contact">
+        <div class="container">
+<?php
+if(!empty($_POST))
+{
+    if(!$_POST['phone'])
+    {
+        $_POST['phone'] = 'not set';
+    }
+    if(!$_POST['message'])
+    {
+        $_POST['message'] = 'not set';
+    }
+    if(!$_POST['fullname'])
+    {
+        $_POST['fullname'] = 'not set';
+    }
+    if(!$_POST['file'])
+    {
+        $_POST['file'] = 'not set';
+    }
+    $_POST['message'] .= '<br><br>User come from site: '.$_POST['file'];
+    if(VublaMailer::sendContactForm())
+    {
+    ?>
+                    <p><span style="color:green">Thank you for contacting us! We will reply shortly.</span></p>
+    <?php
+    }
+    else
+    {
+    ?>
+                    <p><span style="color:red">We seem to have some technical trouble, please send an e-mail to info@vubla.com.</span></p>
+    <?php
+    }
+}
+else
+{
+?>
+                    <p><span style="color:red">We seem to have some technical trouble, please send an e-mail to info@vubla.com.</span></p>
+<?php
+}
+?>
+        </div>
+    </div>
+    
+	  <?php include 'footer.html'; exit; ?>
+    <div class="container">
+        <div class="row banner-logos">
+            <div class="span4">
+                <img src="assets/img/logos/logo-amazon.png">
+            </div>
+            <div class="span4">
+                <img src="assets/img/logos/logo-magento-big.png">
+            </div>
+            <div class="span4">
+                <img src="assets/img/logos/logo-solr.png">
+            </div>
+        </div>
+    </div><!-- /container -->
+    
+    
+    <div class="black-bg">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="span2">
+                        <ul>
+                            <h4>Vubla</h4>
+                            <li><a href="pricing">Prices</a></li>
+                            <li><a href="partners">Partners</a></li>
+                            <li><a target=_blank href="http://magento-testshop.vubla.com/">Vubla demo</a></li>
+                    </div>              
+                    <div class="span2">
+                        <ul>
+                            <h4>The Vubla team</h4>
+                            <li><a href="about">About us</a></li>
+                            <li><a href="contact">Contact</a></li>
+                            <li><a href="conditions">Conditions</a></li>
+                    </div>              
+                    <div class="span2">
+                        <ul>
+                            <h4>More Vubla</h4>
+                            <li><a href="https://twitter.com/vubla">Twitter</a></li>
+                            <li><a href="http://www.facebook.com/vubla">Facebook</a></li>
+                    </div>                  
+                    <div class="span3 offset3">
+                        <a target=_blank href="https://login.vubla.com/user/signup?iso=en"><div class="btn big">Try a free demo <img src="assets/img/button-arrow.png" style="padding-bottom:3px;"></div></a>
+                        <p>&copy; Vubla 2011-2013. All rights reserved.</p>
+                    </div>
+                </div>
+            </div> <!-- /container -->
+        </footer>
+    </div>
+
+</body>
+</html>
